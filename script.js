@@ -1,4 +1,4 @@
-const defaultReviews = [
+const reviews = [
   {
     type: "books",
     title: "An Academic Affair",
@@ -8,15 +8,6 @@ const defaultReviews = [
     reviewText: "A contemporary romance with academic rivalry, tension, banter, and a marriage-of-convenience setup."
   }
 ];
-
-function getSavedReviews() {
-  const saved = localStorage.getItem("reviews");
-  return saved ? JSON.parse(saved) : [];
-}
-
-function saveReviews(reviews) {
-  localStorage.setItem("reviews", JSON.stringify(reviews));
-}
 
 function createCard(review) {
   const image = review.image || "https://via.placeholder.com/400x600?text=Review";
@@ -32,9 +23,6 @@ function createCard(review) {
 }
 
 function renderReviews() {
-  const savedReviews = getSavedReviews();
-  const allReviews = [...savedReviews, ...defaultReviews];
-
   const books = document.getElementById("booksReviews");
   const movies = document.getElementById("moviesReviews");
   const shows = document.getElementById("showsReviews");
@@ -45,14 +33,14 @@ function renderReviews() {
   shows.innerHTML = "";
   recent.innerHTML = "";
 
-  allReviews.forEach(review => {
+  reviews.forEach(review => {
     const card = createCard(review);
     if (review.type === "books") books.insertAdjacentHTML("beforeend", card);
     if (review.type === "movies") movies.insertAdjacentHTML("beforeend", card);
     if (review.type === "shows") shows.insertAdjacentHTML("beforeend", card);
   });
 
-  allReviews.slice(0, 6).forEach(review => {
+  reviews.slice(0, 6).forEach(review => {
     recent.insertAdjacentHTML("beforeend", createCard(review));
   });
 
@@ -68,49 +56,13 @@ function addEmptyMessage(section, message) {
   }
 }
 
-function addReview() {
-  const review = {
-    type: document.getElementById("type").value,
-    title: document.getElementById("title").value.trim(),
-    rating: document.getElementById("rating").value.trim(),
-    image: document.getElementById("image").value.trim(),
-    creator: document.getElementById("creator").value.trim(),
-    reviewText: document.getElementById("reviewText").value.trim()
-  };
-
-  if (!review.title || !review.rating || !review.reviewText) {
-    alert("Please add at least a title, rating, and review.");
-    return;
-  }
-
-  const savedReviews = getSavedReviews();
-  savedReviews.unshift(review);
-  saveReviews(savedReviews);
-
-  document.getElementById("title").value = "";
-  document.getElementById("rating").value = "";
-  document.getElementById("image").value = "";
-  document.getElementById("creator").value = "";
-  document.getElementById("reviewText").value = "";
-
-  renderReviews();
-  alert("Review added! It is saved in this browser.");
-}
-
-function clearSavedReviews() {
-  if (confirm("Clear only the reviews saved in this browser?")) {
-    localStorage.removeItem("reviews");
-    renderReviews();
-  }
-}
-
 function searchReviews() {
   const input = document.getElementById("searchInput").value.toLowerCase();
-  const reviews = document.getElementsByClassName("review");
+  const reviewCards = document.getElementsByClassName("review");
 
-  for (let i = 0; i < reviews.length; i++) {
-    const text = reviews[i].innerText.toLowerCase();
-    reviews[i].style.display = text.includes(input) ? "" : "none";
+  for (let i = 0; i < reviewCards.length; i++) {
+    const text = reviewCards[i].innerText.toLowerCase();
+    reviewCards[i].style.display = text.includes(input) ? "" : "none";
   }
 }
 

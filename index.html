@@ -15,59 +15,15 @@
   </header>
 
   <nav class="nav">
-    <a href="#add">Add Review</a>
     <a href="#recent">Recently Reviewed</a>
     <a href="#books">Books ⭐</a>
     <a href="#movies">Movies ⭐</a>
     <a href="#shows">Shows ⭐</a>
     <a href="#suggest">Suggest</a>
+    <a href="#submit">Submit Review</a>
   </nav>
 
   <main class="container">
-
-    <section id="add" class="panel">
-      <h2>Add a Review 💕</h2>
-      <p class="note">This saves reviews in your browser. To publish permanently for everyone, copy the generated review card into your GitHub file later.</p>
-
-      <div class="form-grid">
-        <label>
-          Type
-          <select id="type">
-            <option value="books">Book</option>
-            <option value="movies">Movie</option>
-            <option value="shows">Show</option>
-          </select>
-        </label>
-
-        <label>
-          Title
-          <input id="title" placeholder="Example: An Academic Affair" />
-        </label>
-
-        <label>
-          Rating
-          <input id="rating" placeholder="Example: ★★★★★ 5/5" />
-        </label>
-
-        <label>
-          Cover or poster image link
-          <input id="image" placeholder="Paste image URL, optional" />
-        </label>
-
-        <label class="wide">
-          Author, director, creator, or notable actors
-          <input id="creator" placeholder="Example: Author: Jodi McAlister" />
-        </label>
-
-        <label class="wide">
-          Your review
-          <textarea id="reviewText" placeholder="Write your review here..."></textarea>
-        </label>
-      </div>
-
-      <button onclick="addReview()">Add Review</button>
-      <button class="secondary" onclick="clearSavedReviews()">Clear saved reviews</button>
-    </section>
 
     <section class="panel search-panel">
       <h2>Search Reviews 🔍</h2>
@@ -96,13 +52,13 @@
 
     <section id="suggest" class="panel">
       <h2>Want Me to Review Something? 💌</h2>
-      <p>Have a book, movie, or show you want reviewed? Drop a suggestion and I may add it to my list.</p>
+      <p>Have a book, movie, or show you want reviewed? Send me a suggestion and I may add it to my list.</p>
       <a class="button-link" href="mailto:imamf4532@gmail.com?subject=Review Suggestion for Between the Covers & Credits">Send a Suggestion</a>
     </section>
 
     <section id="submit" class="panel">
       <h2>Submit Your Own Review 📝</h2>
-      <p>Want your review featured? Send it in. I review all submissions first before anything is published.</p>
+      <p>Want your review featured? Email it to me. I review all submissions first before anything is published.</p>
       <a class="button-link" href="mailto:imamf4532@gmail.com?subject=Review Submission for Approval">Submit a Review</a>
     </section>
 
