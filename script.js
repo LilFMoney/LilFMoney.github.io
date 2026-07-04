@@ -1,4 +1,4 @@
-const reviews = [
+const defaultReviews = [
   {
     type: "books",
     title: "An Academic Affair",
@@ -23,6 +23,8 @@ function createCard(review) {
 }
 
 function renderReviews() {
+  const allReviews = defaultReviews;
+
   const books = document.getElementById("booksReviews");
   const movies = document.getElementById("moviesReviews");
   const shows = document.getElementById("showsReviews");
@@ -33,16 +35,14 @@ function renderReviews() {
   shows.innerHTML = "";
   recent.innerHTML = "";
 
-  reviews.forEach(review => {
+  allReviews.forEach(review => {
     const card = createCard(review);
     if (review.type === "books") books.insertAdjacentHTML("beforeend", card);
     if (review.type === "movies") movies.insertAdjacentHTML("beforeend", card);
     if (review.type === "shows") shows.insertAdjacentHTML("beforeend", card);
   });
 
-  reviews.slice(0, 6).forEach(review => {
-    recent.insertAdjacentHTML("beforeend", createCard(review));
-  });
+  allReviews.slice(0, 6).forEach(review => recent.insertAdjacentHTML("beforeend", createCard(review)));
 
   addEmptyMessage(books, "No book reviews yet.");
   addEmptyMessage(movies, "No movie reviews yet.");
@@ -58,11 +58,11 @@ function addEmptyMessage(section, message) {
 
 function searchReviews() {
   const input = document.getElementById("searchInput").value.toLowerCase();
-  const reviewCards = document.getElementsByClassName("review");
+  const reviews = document.getElementsByClassName("review");
 
-  for (let i = 0; i < reviewCards.length; i++) {
-    const text = reviewCards[i].innerText.toLowerCase();
-    reviewCards[i].style.display = text.includes(input) ? "" : "none";
+  for (let i = 0; i < reviews.length; i++) {
+    const text = reviews[i].innerText.toLowerCase();
+    reviews[i].style.display = text.includes(input) ? "" : "none";
   }
 }
 
