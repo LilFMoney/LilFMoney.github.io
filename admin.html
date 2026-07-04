@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Between the Covers & Credits</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><div class="sparkle">✦</div><h1>Admin Dashboard</h1><p>Between the Covers & Credits</p></header>
+<main class="container">
+<section id="loginPanel" class="panel"><h2>Owner Login 🔒</h2><input id="email" type="email" placeholder="Email"><input id="password" type="password" placeholder="Password"><button id="loginBtn">Log In</button><p id="loginMessage" class="message"></p></section>
+<section id="adminPanel" class="panel hidden"><h2>Add Review 💕</h2>
+<label>Type<select id="type"><option value="books">Book</option><option value="movies">Movie</option><option value="shows">Show</option></select></label>
+<label>Title<input id="title" placeholder="Example: An Academic Affair"></label>
+<label>Rating<input id="rating" placeholder="Example: ★★★★★ 5/5"></label>
+<label>Image URL<input id="image" placeholder="Paste cover or poster image link"></label>
+<label>Author / Director / Creator / Cast<input id="creator" placeholder="Example: Author: Jodi McAlister"></label>
+<label>Genres<input id="genres" placeholder="Example: Romance, Contemporary, Academic"></label>
+<label>Spoiler-free review<textarea id="reviewText" placeholder="Write your review here..."></textarea></label>
+<label>Optional spoiler section<textarea id="spoilerText" placeholder="Optional spoilers here..."></textarea></label>
+<label>Status<select id="status"><option value="published">Publish now</option><option value="draft">Save as draft</option></select></label>
+<button id="publishBtn">Save Review</button><button id="logoutBtn" class="secondary">Log Out</button><p id="adminMessage" class="message"></p></section>
+<section id="reviewListPanel" class="panel hidden"><h2>Your Reviews</h2><div id="adminReviews" class="admin-list"></div></section>
+</main>
+<script type="module" src="admin.js"></script>
+</body></html>
