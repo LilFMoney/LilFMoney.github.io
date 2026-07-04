@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Between the Covers & Credits</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6f3, #d9d7ff, #c7f0ff);
+      color: #2b1638;
+    }
 
+    header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #5b3b75;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 15px;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6b2fa0;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .search-box {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    input {
+      padding: 14px;
+      width: 90%;
+      max-width: 500px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    section {
+      background: rgba(255,255,255,0.75);
+      border-radius: 25px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 8px 25px rgba(105, 45, 150, 0.15);
+    }
+
+    h2 {
+      color: #9b2fae;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 15px;
+      background: #eee;
+    }
+
+    .rating {
+      color: #ff4fc3;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .meta {
+      color: #6c5578;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #ff6bd6, #8b5cf6, #38bdf8);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #5b3b75;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Between the Covers & Credits</h1>
+    <p class="tagline">From the first page to the final frame.</p>
+  </header>
+
+  <nav>
+    <a href="#books">Books ⭐</a>
+    <a href="#movies">Movies ⭐</a>
+    <a href="#shows">Shows ⭐</a>
+    <a href="#suggest">Suggest</a>
+    <a href="#submit">Submit Review</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search books, movies, shows, authors, actors..." onkeyup="searchReviews()">
+    </div>
+
+    <section id="recent">
+      <h2>Recently Reviewed ✨</h2>
+      <div class="review-grid">
+
+        <div class="card review">
+          <img src="https://via.placeholder.com/400x600?text=Book+Cover" alt="Book cover">
+          <h3>Example Book Title</h3>
+          <p class="rating">★★★★☆ 4/5</p>
+          <p class="meta">Author: Example Author</p>
+          <p>A short review goes here. Talk about what worked, what didn’t, and who would enjoy it.</p>
+        </div>
+
+        <div class="card review">
+          <img src="https://via.placeholder.com/400x600?text=Movie+Poster" alt="Movie poster">
+          <h3>Example Movie Title</h3>
+          <p class="rating">★★★★★ 5/5</p>
+          <p class="meta">Director: Example Director | Notable actors: Actor One, Actor Two</p>
+          <p>A short movie review goes here. Add your thoughts, favorite moments, and overall verdict.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="books">
+      <h2>Book Reviews ⭐</h2>
+      <div class="review-grid">
+
+        <div class="card review">
+          <img src="https://via.placeholder.com/400x600?text=Book+Cover" alt="Book cover">
+          <h3>Book Name</h3>
+          <p class="rating">★★★★☆ 4/5</p>
+          <p class="meta">Author: Author Name</p>
+          <p>Your book review text goes here.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="movies">
+      <h2>Movie Reviews ⭐</h2>
+      <div class="review-grid">
+
+        <div class="card review">
+          <img src="https://via.placeholder.com/400x600?text=Movie+Poster" alt="Movie poster">
+          <h3>Movie Name</h3>
+          <p class="rating">★★★☆☆ 3/5</p>
+          <p class="meta">Director: Director Name | Notable actors: Actor Name</p>
+          <p>Your movie review text goes here.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="shows">
+      <h2>Show Reviews ⭐</h2>
+      <div class="review-grid">
+
+        <div class="card review">
+          <img src="https://via.placeholder.com/400x600?text=Show+Poster" alt="Show poster">
+          <h3>Show Name</h3>
+          <p class="rating">★★★★★ 5/5</p>
+          <p class="meta">Creator: Creator Name | Notable actors: Actor Name</p>
+          <p>Your TV show review text goes here.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="suggest">
+      <h2>Want Me to Review Something? 💌</h2>
+      <p>Have a book, movie, or show you want reviewed? Drop a suggestion and I may add it to my list.</p>
+      <a class="button" href="mailto:imamf4532@gmail.com?subject=Review Suggestion for Between the Covers & Credits">Send a Suggestion</a>
+    </section>
+
+    <section id="submit">
+      <h2>Submit Your Own Review 📝</h2>
+      <p>Want your review featured? Send it in. I review all submissions first before anything is published.</p>
+      <a class="button" href="mailto:imamf4532@gmail.com?subject=Review Submission for Approval">Submit a Review</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Between the Covers & Credits</p>
+  </footer>
+
+  <script>
+    function searchReviews() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let reviews = document.getElementsByClassName("review");
+
+      for (let i = 0; i < reviews.length; i++) {
+        let text = reviews[i].innerText.toLowerCase();
+        reviews[i].style.display = text.includes(input) ? "" : "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
