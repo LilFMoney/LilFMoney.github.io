@@ -3,7 +3,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA-dMaH5y25lnZD20J5dyKIagcfRWcUR0",
+  apiKey: "AIzaSyA-dmAha5v25lnZD20J5dvKIagcfRWcUR0",
   authDomain: "between-covers-credits.firebaseapp.com",
   projectId: "between-covers-credits",
   storageBucket: "between-covers-credits.firebasestorage.app",
